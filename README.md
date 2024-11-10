@@ -33,4 +33,4 @@ Este projeto implementa um sistema de alarme utilizando um microcontrolador. O o
 
 ---
 
-Desenvolvido por José Pedro Cândido e Isaack Koslosk de Oliveira 👨‍💻👨‍💻
+Desenvolvido por José Pedro Cândido e Isaack Kosloski Oliveira 👨‍💻👨‍💻
