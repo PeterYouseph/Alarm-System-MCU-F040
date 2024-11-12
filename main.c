@@ -1,7 +1,9 @@
 #include "config.c"
-#include "stdio.h"
-#include "string.h"
-#include "fonte.c"
+#include <stdio.h>
+#include <string.h>
+#include "def_pinos.h"
+#include "delay.h"
+// #include "fonte.c"
 #include "glcd.h"
 #include "bluetooth.h"
 #include "buzzer.h"
@@ -11,8 +13,8 @@
 
 void main(void)
 {
-    Init_Device();
     SFRPAGE = LEGACY_PAGE;
+    Init_Device();
     init_GLCD();
     init_bluetooth();
     init_watchdog();
