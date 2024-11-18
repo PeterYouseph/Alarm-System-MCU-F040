@@ -1,5 +1,6 @@
 #include "buzzer.h"
 #include "delay.h"
+#include "def_pinos.h"
 
 #define BUZZER P2_7 // Pino do buzzer no MCU
 

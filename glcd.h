@@ -2,7 +2,7 @@
 #define GLCD_H
 #include "def_pinos.h"
 #include "fonte.c"
-#include "config.c"
+// #include "config.c"
 
 void glcd_init();                                      // Inicializa o display
 void putchar(char c);                                  // Função para escrever um caractere no display do GLCD
