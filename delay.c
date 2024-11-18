@@ -1,6 +1,6 @@
 #include "delay.h"
 #include "C8051F040_defs.h"
-#include "config.c"
+// #include "config.c"
 
 void delay_ms(unsigned int t)
 {
