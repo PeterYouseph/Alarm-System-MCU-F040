@@ -3,7 +3,7 @@
 #include <string.h>
 #include "def_pinos.h"
 #include "delay.h"
-// #include "fonte.c"
+#include "fonte.c"
 #include "glcd.h"
 #include "bluetooth.h"
 #include "buzzer.h"
@@ -27,13 +27,17 @@ void main(void)
     conf_pag(0, GLCD_ESQ);
     conf_pag(0, GLCD_DIR);
 
+     printf_fast_f("\x2
+                      Dist.: %3u cm");
+
     // Loop principal do sistema de alarme
     while (1)
     {
-        unsigned int distancia = le_hcsr04();
+        // unsigned int distancia = le_hcsr04();
 
         // Verifica a distância medida pelo sensor ultrassônico
-        printf_fast_f("Intruder detected! Dist.: %5u cm\n", distancia);
+        // printf_fast_f("\x2
+        //               Dist.: %3u cm");
         // if (distancia < 30)
         // { // Distância menor que 30cm aciona o alarme
         //     buzzer();

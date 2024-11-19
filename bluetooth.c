@@ -42,17 +42,17 @@ void verifica_bluetooth_comando()
         comando_recebido = 0;
         if (comando == 'm')
         {
-            printf("MENU:\na - Check distance\nb - Activate alarm\n");
+            printf_fast_f("MENU:\na - Check distance\nb - Activate alarm\n");
         }
         else if (comando == 'a')
         {
             unsigned int distancia = le_hcsr04();
-            printf("Distance: %u cm\n", distancia);
+            printf_fast_f("Distance: %u cm\n", distancia);
         }
         else if (comando == 'b')
         {
             buzzer();
-            printf("Alarm activated.\n");
+            printf_fast_f("Alarm activated.\n");
         }
     }
 }
