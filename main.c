@@ -13,8 +13,9 @@
 
 void main(void)
 {
-    SFRPAGE = LEGACY_PAGE;
     Init_Device();
+    SFRPAGE = LEGACY_PAGE;
+
     init_GLCD();
     init_bluetooth();
     init_watchdog();
@@ -22,6 +23,9 @@ void main(void)
     // Limpar GLCD no início
     limpa_glcd(GLCD_ESQ);
     limpa_glcd(GLCD_DIR);
+    // Config page do GLCD
+    conf_pag(0, GLCD_ESQ);
+    conf_pag(0, GLCD_DIR);
 
     // Loop principal do sistema de alarme
     while (1)
@@ -29,12 +33,13 @@ void main(void)
         unsigned int distancia = le_hcsr04();
 
         // Verifica a distância medida pelo sensor ultrassônico
-        if (distancia < 30)
-        { // Distância menor que 30cm aciona o alarme
-            buzzer();
-            desloca_texto("ALARM!", 200);
-            printf("Intruder detected! Dist.: %5u cm\n", distancia);
-        }
+        printf_fast_f("Intruder detected! Dist.: %5u cm\n", distancia);
+        // if (distancia < 30)
+        // { // Distância menor que 30cm aciona o alarme
+        //     buzzer();
+        //     desloca_texto("ALARM!", 200);
+
+        // }
 
         // Comunicação Bluetooth
         verifica_bluetooth_comando();
